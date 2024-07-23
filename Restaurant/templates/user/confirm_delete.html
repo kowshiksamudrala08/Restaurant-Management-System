@@ -1,0 +1,15 @@
+{% extends 'basic.html' %} {% block title %}Delete {% endblock title %} {% block body %}
+  <h2>Confirm Delete Reservation</h2>
+  <p>Are you sure you want to delete the following reservation?</p>
+  <p>Guest Username: {{ reservation.guest.username }}</p>
+  <p>Room Number: {{ reservation.room.roomnumber }}</p>
+  <p>Location: {{ reservation.room.hotel.location }}</p>
+  <p>Check-in: {{ reservation.check_in }}</p>
+  <p>Check-out: {{ reservation.check_out }}</p>
+  
+  <form action="{% url 'delete_reservation' reservation.id %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Delete Reservation</button>
+    <a href="{% url 'dashboard' %}">Cancel</a>
+  </form>
+  {% endblock body %}

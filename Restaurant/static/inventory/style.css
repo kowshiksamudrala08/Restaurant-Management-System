@@ -1,0 +1,280 @@
+/* =================================
+  Base Element Styles
+==================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.addbutton {
+  color: black;
+}
+
+a:hover {
+  font-weight: bold;
+}
+
+article {
+  background: white;
+  padding: 1.5em;
+}
+
+body {
+	line-height: 1.6;
+  background: #e5e3e3;
+  border-top: 9px solid black;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+h1 {
+  color: white;
+  background: #3C81B4;
+  margin: 0;
+  padding: 0.4em;
+  text-align: center;
+}
+
+/* Make the flex container fill remainder of height */
+section {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 150px);
+}
+
+/* This makes the last article fill the section */
+section > article:last-child {
+  flex-grow: 1;
+}
+
+table {
+  background: #e5e3e3;
+  text-align: left;
+  width: 100%;
+}
+
+/* =========================
+Base layout styles
+============================ */
+
+.add {
+  background: white;
+  display: flex;
+}
+
+.add > :last-child {
+  margin-left: auto;
+}
+
+.add p{
+  margin-top: 0;
+  margin-bottom: 0;
+  padding-left: 1em;
+}
+
+.addbutton {
+  border: none;
+  background: #c4c4c4;
+  padding: 0.2em 1.4em 0.2em 1.4em;
+}
+
+.button-posn {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 400px;
+}
+
+.breadcrumb ul {
+  background: white;
+  display: flex;
+  flex-direction: row;
+  padding: 0.2em 1.5em 1em 1.5em;
+}
+
+/* Send Edit to right */
+.breadcrumb ul > .edit {
+  margin-left: auto;
+  background: #c4c4c4;
+}
+
+.breadcrumb li.breadcrumb + li.breadcrumb::before {
+  content: "\00a0>\00a0";
+}
+
+.button {
+  background: #3c81b4;
+  border: none;
+  border-radius: 90px;
+  color: #fff;
+  height: 64px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  width: 278px;
+}
+
+.button-text {
+  color: white;
+  margin: 0;
+}
+
+.container {
+  background: white;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.container-grey{
+  background: #e5e3e3;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.detail {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.exclamation {
+  background: red;
+  border-radius: 1em;
+  color: white;
+  font-size: .8em;
+  height: 2em;
+  line-height: normal;
+  padding: .5em;
+  text-align: center;
+  width: 2em;
+}
+
+.greet {
+  color: #3c81b4;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 60px;
+}
+
+/* Make white go to bottom of home page */
+.home {
+  min-height: calc(100vh - 52px);
+}
+
+.menu-table {
+  background: white;
+  width: 100%;
+}
+
+.menu-table .heading {
+  background: #e5e3e3;
+}
+
+.menu-table a, .breadcrumb a {
+  color: black;
+  text-decoration: underline;
+}
+
+.menu-table td:first-child, th:first-child {
+  padding-left: 1em;
+}
+
+.menu-table td:last-child, th:last-child {
+  padding-right: 1em;
+  text-align: right;
+}
+
+.menu-table tr {
+  border-bottom: 1px solid #e5e3e3;
+  border-top: 1px solid #e5e3e3;
+  height: 3em;
+}
+
+/* Top navbar as flex */
+.nav {
+  background: white;
+  display: flex;
+  padding-bottom: 0.3em;
+  padding-top: 0.5em;
+  vertical-align: bottom;
+  width: 100%
+}
+
+.nav a {
+  color: black;
+  text-decoration: none;
+  /* makes whole item clickable */
+  display: block;
+}
+
+/* Send settings to right */
+.nav > :nth-child(2) {
+  margin-right: auto;
+}
+
+/* Space word 'home' and 'settings' */
+.nav > :nth-child(even) {
+  padding-left: 2%;
+}
+
+.order-table a {
+  color: white;
+}
+
+.order-table tr {
+  border-top: 1px solid #e5e3e3;
+  border-bottom: 1px solid #e5e3e3;
+}
+
+.order-table tr > :first-child {
+  padding-left: 1em;
+}
+
+.order-table tr :last-child {
+  text-align: center;
+}
+
+.order-table th {
+  padding: 0.5em;
+}
+
+.order-table td {
+  background: #099f46;
+  color: white;
+  padding: 0.5em;
+}
+
+.plate-posn {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.plate {
+  color: #3c81b4;
+  background-image: radial-gradient(
+    #a8ceea 0%,
+    #daefff 39.6%,
+    #a8ceea 39.6%,
+    #a8ceea 40%,
+    #ecf3f8 40%,
+    #ecf3f8 50%,
+    #fff 50%
+  );
+  display: inline-block;
+  height: 278px;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 110px;
+  width: 278px;
+}
+
+/* =================================
+  Media Queries
+==================================== */

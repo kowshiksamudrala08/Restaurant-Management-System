@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %}
+    {% endblock title %}
+    </title>
+
+    <!--Cdn links for bootstrap-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'bootstrap\bootstrap.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="icon" href="data:image/png;data:image/png;base64,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" type="image/gif" sizes="16x16">
+    {% block css %}
+    {% endblock css %}
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body style="dbackground-image: url('https://source.unsplash.com/random');height: 100%;">
+    <!--Header Section starts here-->
+    <div class="container-fluid px-0">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-primary font-weight-bold">
+            <a class="navbar-brand text-bold bg-black " href="/"><i class="fas fa-hotel text-warning"></i><b>RMS System</b></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto ">
+                    <li class="nav-item active">
+                        <a class="nav-link text-bold " href="/home"> Home</a>
+                    </li>
+                    {% if user.is_staff %}
+                    <li class="nav-item active">
+                        <a class="nav-link text-bold" href="/staff/panel">Dashboard </a>
+                    </li>
+                    {% elif user.is_staff == False and user.is_authenticated %}
+                    <li class="nav-item active">
+                            <a class="nav-link text-bold" href="/user/bookings">My Bookings </a>
+                        </li>
+                    
+                    
+                    {% endif %}
+                    {% if user.is_staff %}
+                    <li class="nav-item active">
+                            <a class="nav-link text-bold" href="/staff/allbookings">All Bookings </a>
+                        </li>
+                    {% endif %}
+                    
+                    
+                    
+                        
+                    <li class="nav-item active">
+                        <a class="nav-link text-bold" href="/about">About</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link text-bold" href="/contact">Contact </a>
+                    </li>
+                    
+                    
+                   
+                </ul>
+                {% if user.is_authenticated %}
+                      <button class="btn btn-group bg-light" data-toggle="modal" data-target="#forlogin">
+                       Hello, {{request.user}}
+                       <a href="/logout" class="nav-link">
+                    <button class="btn btn-group bg-warning" data-toggle="modal" data-target="#forlogin">
+                        Logout
+                    </button></a>&nbsp; &nbsp;
+                    </button>
+                
+                {% else %}
+                   
+                    <a href="/user" class="nav-link">
+                    <button class="btn btn-group bg-warning font-weight-bold" data-toggle="modal" data-target="#forlogin">
+                        User Login
+                    </button></a>
+                <a href="/staff" class="nav-link">
+                    <button class="btn btn-group bg-warning font-weight-bold">
+                        Staff Login
+                    </button></a>
+                {% endif %}
+
+               
+            </div>
+        </nav>
+    </div>
+    <!--Header Section Ends here-->
+    
+    
+    
+        {% for message in messages %}
+             <div class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert">
+            {{message}}
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+             </button>
+            </div>
+        {% endfor %}
+    
+    {% block body %}
+    
+    {% endblock body %}
+        
+   
+    
+
+
+
+
+
+    
+</body>
+{% block js %}
+{% endblock js %}
+</html>

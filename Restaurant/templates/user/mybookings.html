@@ -1,0 +1,44 @@
+{% extends 'basic.html' %} {% block title %}Dashboard {% endblock title %} {% block body %}
+{% load app_tags %}
+<h3 class="text-center  text-success">My Bookings </h3>
+<table class="table">
+    <thead>
+        <th>User</th>
+        <th>Room</th>
+        <th>Location</th>
+        <th>Person</th>
+        <th>Check in</th>
+        <th>Check out</th>
+        <th>Price</th>
+        <th>Action</th>
+    </thead>
+    {% for each_booking in bookings %}
+    <tr>
+        <td>{{each_booking.guest.username}}</td>
+        <td>{{each_booking.room.roomnumber}}</td>
+        <td>{{each_booking.room.hotel.location}}</td>
+        <td>{{each_booking.room.capacity}}</td>
+        <td>{{each_booking.check_in}}</td>
+        <td>{{each_booking.check_out}}</td>
+        <td>{{each_booking.room.price}}</td>
+        <td>
+            <form id="delete-form-{{ each_booking.id }}" action="{% url 'delete_reservation' each_booking.id %}" method="post">
+              {% csrf_token %}
+              <button type="button" onclick="confirmDelete('{{ each_booking.id }}')">Delete</button>
+            </form>
+          </td>
+    </tr>
+    {% endfor %}
+
+
+</table>
+<script>
+    function confirmDelete(reservationId) {
+      if (confirm('Are you sure you want to delete this reservation?')) {
+        var form = document.getElementById('delete-form-' + reservationId);
+        form.submit(); // Submit the form
+        document.querySelector('button[type="button"]').disabled = true; // Disable the button after submission
+      }
+    }
+  </script>
+{% endblock body %}
