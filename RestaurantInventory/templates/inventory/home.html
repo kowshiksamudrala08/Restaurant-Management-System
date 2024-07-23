@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}Home{% endblock %}
+
+{% block content %}
+  <div class="container home">
+    <div class="plate-posn">
+      <h1 class="plate">Inventory Management System</h1>
+    </div>
+    {% if user.username %}
+      <h2 class="greet">Welcome {{ user.username }}</h2>
+    {% endif %}
+    <div class="button-posn">
+      {% if user.is_staff %}
+        <button class="button"><a href="{% url 'menu' %}"><h2 class="button-text">Menu management</h2></a></button>
+        <button class="button"><a href="{% url 'stock' %}"><h2 class="button-text">Stock management</h2></a></button>
+        <button class="button"><a href="{% url 'sales_profit' %}"><h2 class="button-text">Sales and profit</h2></a></button>
+      {% else %}
+        <button class="button"><a href="{% url 'menu' %}"><h2 class="button-text">Menu</h2></a></button>
+        <button class="button"><a href="{% url 'table_order' %}"><h2 class="button-text">Orders</h2></a></button>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
